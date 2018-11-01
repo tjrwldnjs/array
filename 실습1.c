@@ -1,57 +1,38 @@
 #include <stdio.h>
-#define ROWS 3
-#define COLS 3
 #include <stdlib.h>
+#define N_SORT 5
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-int main(void) 
-{
-	int A[ROWS][COLS] = {
+int main(void) {
+
+
+	int nums[N_SORT];
+	int i;
 	
-	{2,3,0},
-	{8,9,1},
-	{7,0,5}};
+	printf("input %i numbers : ", N_SORT);
 	
-	int B[ROWS][COLS] = {
+	for (i=0; i<N_SORT; i++)
+	{
 	
-	{1,0,0},
-	{0,1,0},
-	{0,0.1}};
-	 
-	int C[ROWS][COLS];
+		scanf("%d", &nums[i]);	
 	
-	addMatrix (A,B,C);
-	printMatrix(C);
+		}
+		
+	//sorting function
+	//bubbleSort();
+	
+	printf("sorted numbers are : ");
+	for (i=0; i<N_SORT; i++)
+	{
+		printf("%d", nums[i]);
+	}	
+	
+
 	
 	return 0;
 }
-	void printMatrix(int A[][COLS])
-	{
-		int i, j;
-		
-		for (i=0; i<ROWS; i++) {
-			for (j=0; j<COLS; j++) {
-				printf("%d ", A[i][j]);
-			}
-			printf("\n");
-		}
-		
-		return;
-	 } 
-	
-	int addMatrix(int A[][COLS], int B[][COLS], int C[][COLS])
-	{
-		int i, j;
-		
-		for (i=0; i<ROWS; i++) {
-			for (j=0; j<COLS; j++) {
-				C[i][j] = A[i][j] + B[i][j];
-			}
-		}
-		
-		return 1;
-	}
+
 	
 	
 	
